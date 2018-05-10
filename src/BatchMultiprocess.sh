@@ -32,7 +32,8 @@ while true; do
     for i in "${pid[@]}"; do
         sleep $TIME
         if [[ ! -d /proc/$i ]]; then
-            # Delete the old process del=($i)
+            # Delete the old process 
+            del=($i)
             pid=( "${pid[@]/$del}" )
             finished=$((finished + 1))
 
